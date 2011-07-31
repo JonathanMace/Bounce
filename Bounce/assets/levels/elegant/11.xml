@@ -1,0 +1,7 @@
+<level name="Tip of the Iceberg">
+	<ball x="206" y="228"/>
+	<bucket x="585" y="348"/>
+	<wall x1="799" y1="66" x2="733" y2="0"/>
+	<wall x1="706" y1="84" x2="351" y2="481"/>
+	<wall x1="706" y1="84" x2="2" y2="481"/>
+</level>

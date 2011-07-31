@@ -1,0 +1,6 @@
+<level name="Down the Chimney">
+	<ball x="246" y="289"/>
+	<bucket x="623"/>
+	<wall x1="655" y1="130" x2="655" />
+	<wall x1="590" y1="130" x2="590" />
+</level>

@@ -1,0 +1,8 @@
+<level name="North by North East">
+	<ball x="250" y="446"/>
+	<bucket x="671" y="148"/>
+	<wall x1="585" y1="50" x2="472" y2="0"/>
+	<wall x1="585" y1="49" x2="585" y2="0"/>
+	<wall x1="746" y1="312" x2="800" y2="215"/>
+	<wall x1="746" y1="312" x2="800" y2="312"/>
+</level>

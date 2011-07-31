@@ -1,0 +1,6 @@
+<level name="Through the looking glass">
+    <ball x="230" y="340"/>
+    <bucket x="540"/>
+    <wall x1="400" y1="0" x2="400" y2="200"/>
+    <wall x1="400" y1="280" x2="400"/>
+</level>

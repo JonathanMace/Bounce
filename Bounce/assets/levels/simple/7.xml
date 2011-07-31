@@ -1,0 +1,6 @@
+<level name="Through the Fence">
+	<ball x="133" y="220"/>
+	<bucket x="678" y="443"/>
+	<wall x1="552" y1="233" x2="552" y2="477"/>
+	<wall x1="327" y1="288" x2="327" y2="0"/>
+</level>

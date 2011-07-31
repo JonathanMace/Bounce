@@ -1,0 +1,6 @@
+<level name="Way">
+    <ball x="350" y="400"/>
+    <bucket x="720"/>
+    <wall x1="0" x2="500" y1="320" y2="320"/>
+    <wall x1="640" x2="640" y1="160"/>
+</level>

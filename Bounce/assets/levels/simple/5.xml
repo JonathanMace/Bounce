@@ -1,0 +1,5 @@
+<level name="Wheeee">
+    <ball x="106" y="191"/>
+    <bucket x="755" y="443"/>
+    <wall x1="0" y1="216" x2="620" y2="275"/>
+</level>
