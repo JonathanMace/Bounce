@@ -1,4 +1,4 @@
-<level name="Wheeeeee">
+<level name="Wheeeeee" id="awkward8">
     <ball x="200" y="200"/>
     <bucket x="43" y="338"/>
     <wall x1="0" y1="160" y2="160"/>

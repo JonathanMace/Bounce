@@ -1,4 +1,4 @@
-<level name="Either way, you're OK">
+<level name="Either way, you're OK" id="elegant7">
     <ball x="400" y="360"/>
     <bucket x="400" y="120"/>
     <wall x1="200" x2="600" y1="240" y2="240"/>

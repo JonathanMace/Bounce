@@ -1,4 +1,4 @@
-<level name="It's in the name">
+<level name="It's in the name" id="elegant4">
     <ball x="680" y="250"/>
     <bucket x="100"/>
     <wall x1="500" x2="500" y1="0" y2="230"/>

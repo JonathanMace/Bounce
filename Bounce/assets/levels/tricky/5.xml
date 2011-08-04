@@ -1,4 +1,4 @@
-<level name="Not 4 U">
+<level name="Not 4 U" id="tricky5">
 	<ball x="278" y="229"/>
 	<bucket x="452" y="163"/>
 	<wall x1="366" y1="42" x2="366" y2="287"/>

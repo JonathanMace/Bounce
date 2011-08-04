@@ -1,4 +1,4 @@
-<level name="Up and Down and Up and Down">
+<level name="Up and Down and Up and Down" id="simple3">
     <ball x="125" y="280"/>
     <bucket x="675"/>
     <wall x1="250" y1="200" x2="250"/>

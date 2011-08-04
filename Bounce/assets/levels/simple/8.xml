@@ -1,4 +1,4 @@
-<level name="Hot Potato!">
+<level name="Hot Potato!" id="simple8">
 	<ball x="381" y="116"/>
 	<bucket x="406" y="443"/>
 	<wall x1="598" y1="172" x2="0" y2="172"/>

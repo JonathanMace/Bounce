@@ -1,4 +1,4 @@
-<level name="North by North East">
+<level name="North by North East" id="elegant12">
 	<ball x="250" y="446"/>
 	<bucket x="671" y="148"/>
 	<wall x1="585" y1="50" x2="472" y2="0"/>

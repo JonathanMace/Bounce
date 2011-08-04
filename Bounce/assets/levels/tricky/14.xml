@@ -1,4 +1,4 @@
-<level name="The Eye of the Needle">
+<level name="The Eye of the Needle" id="tricky14">
     <ball x="151" y="84"/>
 	<bucket x="629" y="204"/>
 	<wall x1="192" y1="119" x2="192" y2="480"/>

@@ -1,4 +1,4 @@
-<level name="You're too slow!">
+<level name="You're too slow!" id="awkward6">
     <ball x="400" y="207"/>
     <bucket x="400"/>
     <wall x1="250" y1="240" x2="550" y2="240"/>

@@ -1,4 +1,4 @@
-<level name="You spin me right round">
+<level name="You spin me right round" id="elegant16">
 	<ball x="214" y="197"/>
 	<bucket x="378" y="405"/>
 	<wall x1="201" y1="230" x2="201" y2="480"/>

@@ -1,4 +1,4 @@
-<level name="Be precise">
+<level name="Be precise" id="simple2">
     <ball x="620" y="240"/>
     <bucket x="50"/>
     <wall x1="100" x2="100" y1="0" y2="150"/>

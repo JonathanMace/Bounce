@@ -1,4 +1,4 @@
-<level name="BOOM">
+<level name="BOOM" id="elegant10">
 	<ball x="692" y="54"/>
 	<bucket x="408" y="224"/>
 	<wall x1="365" y1="189" x2="336" y2="120"/>

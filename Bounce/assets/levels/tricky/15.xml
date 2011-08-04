@@ -1,4 +1,4 @@
-<level name="On Stilts">
+<level name="On Stilts" id="tricky15">
 	<ball x="53" y="446"/>
 	<bucket x="629" y="204"/>
 	<wall x1="192" y1="119" x2="192" y2="480"/>

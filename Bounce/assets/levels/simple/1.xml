@@ -1,4 +1,4 @@
-<level name="Easy does it">
+<level name="Easy does it" id="simple1">
     <ball x="200" y="350"/>
     <bucket x="720"/>
     <wall x1="300" x2="300" y1="0" y2="380"/>

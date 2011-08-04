@@ -1,4 +1,4 @@
-<level name="We Carry On">
+<level name="We Carry On" id="tricky10">
 	<ball x="32" y="237"/>
 	<bucket x="755" y="443"/>
 	<wall x1="125" y1="209" x2="125" y2="0"/>

@@ -1,4 +1,4 @@
-<level name="Bad Precision">
+<level name="Bad Precision" id="tricky6">
 	<ball x="135" y="213"/>
 	<bucket x="755" y="239"/>
 	<wall x1="174" y1="370" x2="284" y2="370"/>

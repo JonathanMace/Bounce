@@ -41,20 +41,24 @@ public class TextureUtils {
     }
     
     public static TextureBucket loadMenuTextures(Context context, Engine engine) {
-        BitmapTextureAtlas m64BitmapTextureAtlas = new BitmapTextureAtlas(64, 64, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
-        BitmapTextureAtlas m512BitmapTextureAtlas = new BitmapTextureAtlas(512, 512, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+        BitmapTextureAtlas m64BitmapTextureAtlas = new BitmapTextureAtlas(64, 128, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+        BitmapTextureAtlas m512BitmapTextureAtlas = new BitmapTextureAtlas(512, 1024, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
         BitmapTextureAtlas m1024BitmapTextureAtlas = new BitmapTextureAtlas(1024, 2048, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+        BitmapTextureAtlas m2048BitmapTextureAtlas = new BitmapTextureAtlas(2048, 64, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 
         BitmapTextureAtlasTextureRegionFactory.setAssetBasePath("gfx/");
 
         TextureBucket bucket = new TextureBucket();
 
         bucket.addTexture("ball", BitmapTextureAtlasTextureRegionFactory.createFromAsset(m64BitmapTextureAtlas, context, "basketball.png", 0, 0));
-        
+        bucket.addTexture("tick", BitmapTextureAtlasTextureRegionFactory.createFromAsset(m64BitmapTextureAtlas, context, "tick.png", 0, 64));
+
         bucket.addTexture("logo", BitmapTextureAtlasTextureRegionFactory.createFromAsset(m512BitmapTextureAtlas, context, "logo.png", 0, 0));
         bucket.addTiledTexture("button_playgame", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m512BitmapTextureAtlas, context, "button_playgame.png", 0, 128, 2, 1));
         bucket.addTiledTexture("button_settings", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m512BitmapTextureAtlas, context, "button_settings.png", 0, 256, 2, 1));
         bucket.addTiledTexture("button_quit", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m512BitmapTextureAtlas, context, "button_quit.png", 0, 384, 2, 1));
+        bucket.addTiledTexture("arrowleft", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m512BitmapTextureAtlas, context, "arrowleft.png", 0, 512, 2, 1));
+        bucket.addTiledTexture("arrowright", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m512BitmapTextureAtlas, context, "arrowright.png", 0, 640, 2, 1));
         
         // Select mode buttons
         bucket.addTiledTexture("button_practice", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_practice.png", 0, 0, 3, 1));
@@ -74,23 +78,30 @@ public class TextureUtils {
         bucket.addTiledTexture("button_levels_phonesmashing", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_phonesmashing.png", 0, 1536, 3, 1));
         bucket.addTiledTexture("button_levels_simple", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_simple.png", 0, 1664, 3, 1));
         bucket.addTiledTexture("button_levels_tricky", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_tricky.png", 0, 1792, 3, 1));
+
+        bucket.addTiledTexture("button_level", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m2048BitmapTextureAtlas, context, "button_level.png", 0, 0, 3, 1));
         
         
         engine.getTextureManager().loadTexture(m64BitmapTextureAtlas);
         engine.getTextureManager().loadTexture(m512BitmapTextureAtlas);
         engine.getTextureManager().loadTexture(m1024BitmapTextureAtlas);
+        engine.getTextureManager().loadTexture(m2048BitmapTextureAtlas);
         
         return bucket;   
     }
     
-    public static Font loadFont(Engine engine) {
-        return loadFont(engine, 32);
+    public static Font loadGameFont(Engine engine) {
+        return loadFont(engine, 32, Color.rgb(181, 196, 0));
     }
     
-    public static Font loadFont(Engine engine, int fontSize) {
+    public static Font loadMenuFont(Engine engine) {
+        return loadFont(engine, 32, Color.rgb(100, 100, 100));
+    }
+    
+    public static Font loadFont(Engine engine, int fontSize, int colour) {
         BitmapTextureAtlas fontTexture = new BitmapTextureAtlas(256, 256, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 
-        Font font = new Font(fontTexture, Typeface.create(Typeface.DEFAULT, Typeface.BOLD), fontSize, true, Color.rgb(181, 196, 0));
+        Font font = new Font(fontTexture, Typeface.create(Typeface.DEFAULT, Typeface.BOLD), fontSize, true, colour);
 
         engine.getTextureManager().loadTexture(fontTexture);
         engine.getFontManager().loadFont(font);

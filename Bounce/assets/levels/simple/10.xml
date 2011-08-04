@@ -1,4 +1,4 @@
-<level name="Millimetre">
+<level name="Millimetre" id="simple10">
 	<ball x="420" y="75"/>
 	<bucket x="400" y="443"/>
 	<wall x1="368" y1="296" x2="308" y2="356"/>

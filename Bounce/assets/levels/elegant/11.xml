@@ -1,4 +1,4 @@
-<level name="Tip of the Iceberg">
+<level name="Tip of the Iceberg" id="elegant11">
 	<ball x="206" y="228"/>
 	<bucket x="585" y="348"/>
 	<wall x1="799" y1="66" x2="733" y2="0"/>

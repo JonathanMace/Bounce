@@ -1,4 +1,4 @@
-<level name="Down the Chimney">
+<level name="Down the Chimney" id="elegant1">
 	<ball x="246" y="289"/>
 	<bucket x="623"/>
 	<wall x1="655" y1="130" x2="655" />

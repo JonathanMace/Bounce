@@ -1,4 +1,4 @@
-<level name="Watch">
+<level name="Watch" id="tricky12">
 	<ball x="44" y="446"/>
 	<bucket x="508" y="280"/>
 	<wall x1="341" y1="183" x2="397" y2="125"/>

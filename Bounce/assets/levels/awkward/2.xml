@@ -1,4 +1,4 @@
-<level name="My, what a large wall you have">
+<level name="My, what a large wall you have" id="awkward2">
     <ball x="200" y="280"/>
     <bucket x="630"/>
     <wall x1="400" y1="80" x2="400"/>

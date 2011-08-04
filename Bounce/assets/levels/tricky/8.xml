@@ -1,4 +1,4 @@
-<level name="No Sweat">
+<level name="No Sweat" id="tricky8">
 	<ball x="674" y="446"/>
 	<bucket x="755" y="443"/>
 	<wall x1="713" y1="409" x2="703" y2="400"/>

@@ -1,4 +1,4 @@
-<level name="No way">
+<level name="No way" id="tricky1">
     <ball x="200" y="400"/>
     <bucket x="720"/>
     <wall x1="0" x2="500" y1="320" y2="320"/>

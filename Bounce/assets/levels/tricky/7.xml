@@ -1,4 +1,4 @@
-<level name="Round and Round? No.">
+<level name="Round and Round? No." id="tricky7">
 	<ball x="251" y="446"/>
 	<bucket x="283" y="215"/>
 	<wall x1="617" y1="251" x2="0" y2="391"/>

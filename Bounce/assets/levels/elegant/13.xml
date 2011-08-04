@@ -1,4 +1,4 @@
-<level name="'Ave it!">
+<level name="'Ave it!" id="elegant13">
 	<ball x="682" y="56"/>
 	<bucket x="265" y="156"/>
 	<wall x1="222" y1="191" x2="158" y2="128"/>

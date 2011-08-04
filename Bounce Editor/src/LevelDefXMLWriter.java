@@ -1,10 +1,10 @@
-import im.mace.android.bounce.levels2.LevelDef;
-import im.mace.android.bounce.objects.Wall;
+import im.mace.android.bounce.common.LevelSpec;
+import im.mace.android.bounce.ui.Wall;
 
 
 public class LevelDefXMLWriter {
 
-    public static String writeXML(LevelDef def) {
+    public static String writeXML(LevelSpec def) {
         StringBuilder xml = new StringBuilder();
         
         xml.append("<level name=\"");

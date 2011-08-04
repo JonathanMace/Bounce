@@ -1,4 +1,4 @@
-<level name="My Very First Level">
+<level name="My Very First Level" id="awkward0">
     <ball x="200" y="280"/>
     <bucket x="600"/>
 </level>

@@ -1,4 +1,4 @@
-<level name="A Roundabout Way">
+<level name="A Roundabout Way" id="elegant15">
 	<ball x="654" y="185"/>
 	<bucket x="355" y="241"/>
 	<wall x1="510" y1="0" x2="510" y2="316"/>

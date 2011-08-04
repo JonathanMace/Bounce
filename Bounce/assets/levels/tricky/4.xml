@@ -1,4 +1,4 @@
-<level name="Tree's Company">
+<level name="Tree's Company" id="tricky4">
     <ball x="350" y="415"/>
     <bucket x="630"/>
     <wall x1="0" x2="225" y1="200" y2="200"/>

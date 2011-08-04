@@ -1,4 +1,4 @@
-<level name="Chimney Swoosh">
+<level name="Chimney Swoosh" id="tricky0">
 	<ball x="246" y="289"/>
 	<bucket x="623"/>
 	<wall x1="655" y1="72" x2="655" />

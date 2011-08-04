@@ -1,4 +1,4 @@
-<level name="Spike">
+<level name="Spike" id="simple0">
 	<ball x="116" y="137"/>
 	<bucket x="755" y="443"/>
 	<wall x1="126" y1="195" x2="0" y2="195"/>

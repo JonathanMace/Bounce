@@ -1,4 +1,4 @@
-<level name="Good Enough">
+<level name="Good Enough" id="elegant9">
 	<ball x="595" y="154"/>
 	<bucket x="344" y="344"/>
 	<wall x1="385" y1="378" x2="385" y2="80"/>

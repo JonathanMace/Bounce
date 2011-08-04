@@ -7,22 +7,35 @@
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name="Bounce"
-                  android:label="@string/app_name">
+        <activity android:name="im.mace.android.bounce.Bounce"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="MainMenuActivity"
+        <activity android:name="im.mace.android.bounce.game.mainmenu.MainMenuActivity"
                   android:label="@string/app_name">
         </activity>
-        <activity android:name="GameActivity"
+        <activity android:name="im.mace.android.bounce.game.standard.StandardModeGame"
                   android:label="@string/app_name">
         </activity>
-        <activity android:name="GameControllerActivity"
+        <activity android:name="im.mace.android.bounce.game.standard.StandardMode"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.NoDisplay">
+        </activity>
+        <activity android:name="im.mace.android.bounce.game.minbounce.MinBounceMode"
                   android:label="@string/app_name">
         </activity>
-
+        <activity android:name="im.mace.android.bounce.game.maxbounce.MaxBounceMode"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name="im.mace.android.bounce.game.practice.PracticeMode"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name="im.mace.android.bounce.game.timeattack.TimeAttackMode"
+                  android:label="@string/app_name">
+        </activity>
     </application>
 </manifest>

@@ -1,5 +1,5 @@
-import im.mace.android.bounce.levels.LevelDefHandler;
-import im.mace.android.bounce.levels2.LevelDef;
+import im.mace.android.bounce.common.LevelSpec;
+import im.mace.android.bounce.io.LevelSpecHandler;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
@@ -116,12 +116,12 @@ public class BallsEditor implements WindowListener {
         controlPanel.setVisible(true);
     }
     
-    private LevelDef loadCurrent() {
-        LevelDef def = new LevelDef();
+    private LevelSpec loadCurrent() {
+        LevelSpec def = new LevelSpec();
         try {
             SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
             File file = new File("E:\\Java Workspaces\\Android\\Bounce\\assets\\levels\\impossible\\0.xml");
-            LevelDefHandler handler = new LevelDefHandler();
+            LevelSpecHandler handler = new LevelSpecHandler();
             parser.parse(file, handler);
             return handler.getLevelDef();      
         } catch (ParserConfigurationException e) {

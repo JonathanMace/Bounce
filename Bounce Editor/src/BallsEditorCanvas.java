@@ -1,7 +1,7 @@
 
 import im.mace.android.bounce.common.Constants;
-import im.mace.android.bounce.levels2.LevelDef;
-import im.mace.android.bounce.objects.Wall;
+import im.mace.android.bounce.common.LevelSpec;
+import im.mace.android.bounce.ui.Wall;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -19,7 +19,7 @@ public class BallsEditorCanvas extends JComponent {
     
     private static final int BORDER = 100;
     
-    LevelDef def = new LevelDef();
+    LevelSpec def = new LevelSpec();
     Stack<Undo> undoStack = new Stack<Undo>();
     
     public BallsEditorCanvas() {
@@ -101,11 +101,11 @@ public class BallsEditorCanvas extends JComponent {
     }
     
     public void reset() {
-        setDef(new LevelDef());
+        setDef(new LevelSpec());
     }
     
-    public void setDef(LevelDef newDef) {
-        final LevelDef oldDef = def;
+    public void setDef(LevelSpec newDef) {
+        final LevelSpec oldDef = def;
         undoStack.push(new Undo() {
             public void undo() {   
                 def = oldDef;
@@ -115,7 +115,7 @@ public class BallsEditorCanvas extends JComponent {
         BallsEditorCanvas.this.repaint();
     }
     
-    public LevelDef getCurrent() {
+    public LevelSpec getCurrent() {
         return def;
     }
     

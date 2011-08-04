@@ -29,5 +29,25 @@ public class Constants {
     
     public static final String LEVEL_SET_KEY = "levelset";
     public static final String LEVEL_KEY = "level";
+    
+    public static final Long MAX_BOUNCES_CAP = 0L;
+    public static final Long MIN_BOUNCES_FLOOR = 100L;
+    public static final Long TIME_ATTACK_CAP = 60000000000L;
+
+    public static final String[][] LEVELSETS = new String[][] {
+            { "simple", "elegant", "tricky" },
+            { "awkward", "frustrating", "phonesmashing" },
+            { "confusing", "annoying", "impossible" } 
+    };
+    
+
+    public static final String MODE_TIME = "besttime";
+    public static final String MODE_MIN = "minbounce";
+    public static final String MODE_MAX = "maxbounce";
+    public static final String MODE_MINMAX = "minmax";
+    public static final String MODE_PRACTICE = "practice";
+    public static final String MODE_STANDARD = "standard";
+    
+    public static final String PREFERENCES_NAME = "im.mace.android.bounce";
 
 }
