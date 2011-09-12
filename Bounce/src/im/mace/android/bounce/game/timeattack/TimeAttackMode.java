@@ -1,7 +1,12 @@
 package im.mace.android.bounce.game.timeattack;
 import im.mace.android.bounce.common.Constants;
+import im.mace.android.bounce.common.Level;
 import im.mace.android.bounce.game.BaseGame;
 import im.mace.android.bounce.game.GameScene;
+import im.mace.android.bounce.io.GameState;
+import im.mace.android.bounce.io.LevelManager;
+
+import java.util.List;
 
 import org.anddev.andengine.engine.camera.hud.HUD;
 
@@ -47,6 +52,7 @@ public class TimeAttackMode extends BaseGame {
 	protected void onGameSuccess() {
 		if (this.level.setBestTime(currentTime)) {
 			this.timeAttackHUD.setBest(currentTime);
+			this.evaluateUnlocks();
 		}
 	}
     
@@ -65,5 +71,19 @@ public class TimeAttackMode extends BaseGame {
 	protected void onQuit() {
         this.setResult(RESULT_CANCELED);
         this.finish();      
+	}
+
+	
+	private void evaluateUnlocks() {
+    	GameState state = new GameState(this);
+    	if (!state.isNextLevelSetUnlocked(Constants.MODE_TIME, levelSet)) {
+    		List<Level> allLevels = LevelManager.getLevels(this, this.levelSet);
+    		for (Level level : allLevels) {
+    			if (!level.beatenTime()) {
+    				return;
+    			}
+    		}
+    		state.unlockNextLevelSet(Constants.MODE_TIME, this.levelSet);
+    	}
 	}
 }

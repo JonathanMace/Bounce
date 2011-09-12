@@ -1,6 +1,12 @@
 package im.mace.android.bounce.game.maxbounce;
+import java.util.List;
+
+import im.mace.android.bounce.common.Constants;
+import im.mace.android.bounce.common.Level;
 import im.mace.android.bounce.game.BaseGame;
 import im.mace.android.bounce.game.GameScene;
+import im.mace.android.bounce.io.GameState;
+import im.mace.android.bounce.io.LevelManager;
 
 import org.anddev.andengine.engine.camera.hud.HUD;
 
@@ -45,6 +51,7 @@ public class MaxBounceMode extends BaseGame {
 	protected void onGameSuccess() {
 		if (this.level.setMaxBounces(this.scene.bounces)) {
 			this.maxBounceHUD.setBest(this.scene.bounces);
+			this.evaluateUnlocks();
 		}
 	}
     
@@ -63,5 +70,22 @@ public class MaxBounceMode extends BaseGame {
 	protected void onQuit() {
         this.setResult(RESULT_CANCELED);
         this.finish();      
+	}
+	
+	private void evaluateUnlocks() {
+    	GameState state = new GameState(this);
+    	if (!state.isNextLevelSetUnlocked(Constants.MODE_MAX, levelSet)) {
+    		List<Level> allLevels = LevelManager.getLevels(this, this.levelSet);
+    		for (Level level : allLevels) {
+    			if (!level.beatenMax()) {
+    				return;
+    			}
+    		}
+    		state.unlockNextLevelSet(Constants.MODE_MAX, this.levelSet);
+    		if (this.levelSet.equals(Constants.LEVELSETS[5]) && state.isLevelSetUnlocked(Constants.MODE_MIN, Constants.LEVELSETS[6])) {
+    			state.unlockMode(Constants.MODE_TIME);
+    			state.unlockLevelSet(Constants.MODE_TIME, Constants.LEVELSETS[0]);
+    		}
+    	}
 	}
 }

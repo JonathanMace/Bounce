@@ -1,0 +1,7 @@
+<level name="From Behind" id="level">
+	<ball x="641" y="348"/>
+	<bucket x="453" y="270"/>
+	<wall x1="496" y1="235" x2="496" y2="159"/>
+	<wall x1="496" y1="159" x2="348" y2="159"/>
+	<wall x1="410" y1="234" x2="351" y2="234"/>
+</level>

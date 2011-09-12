@@ -1,0 +1,5 @@
+<level name="Further back" id="1a1" min="2" max="6" time="3">
+	<ball x="662" y="282"/>
+	<bucket x="254" y="279"/>
+	<wall x1="0" y1="315" x2="800" y2="315"/>
+</level>

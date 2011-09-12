@@ -1,0 +1,4 @@
+<level name="The Other Side" id="1a2" min="2" max="8" time="2">
+    <ball x="200" y="280"/>
+    <bucket x="600"/>
+</level>

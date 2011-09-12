@@ -1,0 +1,6 @@
+<level name="Hole In One" id="1c6">
+	<ball x="32" y="242"/>
+	<bucket x="595" y="290"/>
+	<wall x1="160" y1="173" x2="160" y2="0"/>
+	<wall x1="156" y1="293" x2="156" y2="480"/>
+</level>

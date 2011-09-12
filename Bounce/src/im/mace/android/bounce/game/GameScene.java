@@ -14,6 +14,7 @@ import org.anddev.andengine.entity.scene.Scene;
 import org.anddev.andengine.entity.scene.background.ColorBackground;
 import org.anddev.andengine.entity.shape.Shape;
 import org.anddev.andengine.entity.sprite.Sprite;
+import org.anddev.andengine.extension.physics.box2d.FixedStepPhysicsWorld;
 import org.anddev.andengine.extension.physics.box2d.PhysicsConnector;
 import org.anddev.andengine.extension.physics.box2d.PhysicsFactory;
 import org.anddev.andengine.extension.physics.box2d.PhysicsWorld;
@@ -48,6 +49,7 @@ public abstract class GameScene extends Scene {
     public volatile long gameDuration;
     public volatile long bounces;
 	private IUpdateHandler currentTimer;
+	private FireBallTouchListener fireBallListener;
     
     public GameScene(LevelSpec def, TextureBucket textures) {
         this.def = def;
@@ -57,7 +59,7 @@ public abstract class GameScene extends Scene {
         this.setBackground(new ColorBackground(0, 0, 0));
         
         // Fixed step physics world
-        this.world = new PhysicsWorld(Constants.GRAVITY, false);
+        this.world = new FixedStepPhysicsWorld(60, Constants.GRAVITY, false);
         
         // Set up geometry
         this.constructGeometry();
@@ -90,7 +92,14 @@ public abstract class GameScene extends Scene {
         this.world.setGravity(Constants.ZERO_VECTOR);
         this.resetBall();
 
-        this.setOnSceneTouchListener(new FireBallTouchListener(def.ballX, def.ballY, previousFirePoint));
+        if (this.fireBallListener!=null) {
+        	this.fireBallListener.detachGhost();
+        }
+        
+        this.fireBallListener = new FireBallTouchListener(def.ballX, def.ballY, previousFirePoint);
+        this.setOnSceneTouchListener(this.fireBallListener);
+        
+        System.gc();
     }
     
     /**
@@ -252,12 +261,14 @@ public abstract class GameScene extends Scene {
     }
     
     private class Timer implements IUpdateHandler {
-    	long begin;
-    	public Timer() {
-        	begin = System.nanoTime();
-    	}
+    	float begin = 0;
 		public void onUpdate(float pSecondsElapsed) {
-			GameScene.this.onTimeElapsed(System.nanoTime() - begin);
+			// Use the elapsed time, rather than System time, because
+			// if slowdown occurs in the game engine, the scaled time
+			// takes this into account as well.
+			begin += pSecondsElapsed;
+			long longElapsed = (long) (begin * 1000000000);
+			GameScene.this.onTimeElapsed(longElapsed);
 		}
 		public void reset() {}
     }
@@ -299,13 +310,19 @@ public abstract class GameScene extends Scene {
         public void detach() {
             this.detachActiveLine();
             GameScene.this.setOnSceneTouchListener(null);    
+            GameScene.this.fireBallListener=null;
             if (this.ghostRecticle!=null) {
                 GameScene.this.postRunnable(new Runnable() {
                     public void run() {
-                        GameScene.this.detachChild(FireBallTouchListener.this.ghostRecticle);
+                    	detachGhost();
                     }
                 });
             }
+        }
+        
+        public void detachGhost() {
+        	GameScene.this.detachChild(this.ghostRecticle);
+        	
         }
 
         @Override

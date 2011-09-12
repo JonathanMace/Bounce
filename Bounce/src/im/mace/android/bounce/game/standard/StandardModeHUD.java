@@ -44,7 +44,7 @@ public abstract class StandardModeHUD extends BaseHUD {
         float starty = -200;
         Text textCenter = new Text(0, starty, font, levelName, HorizontalAlign.CENTER);
         float x = 400 - textCenter.getWidth()/2;
-        float y = 5;
+        float y = 10;
         textCenter.registerEntityModifier(new MoveModifier(4, x, x, starty, y, EaseElasticOut.getInstance()));
         return textCenter;
     }

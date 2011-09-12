@@ -26,7 +26,7 @@ public class LevelSpecHandler extends DefaultHandler {
             def.min = getLongAttribute(attributes.getValue("min"), def.min);
             def.max = getLongAttribute(attributes.getValue("max"), def.max);
             def.minmax = getLongAttribute(attributes.getValue("minmax"), def.minmax);
-            def.time = getLongAttribute(attributes.getValue("time"), def.time);
+            def.time = getTime(attributes.getValue("time"), def.time);
         } else if (localName.equals("bucket") || qName.equals("bucket")) {
             def.bucketX = getFloatAttribute(attributes.getValue("x"), def.bucketX);
             def.bucketY = getFloatAttribute(attributes.getValue("y"), def.bucketY);
@@ -64,6 +64,19 @@ public class LevelSpecHandler extends DefaultHandler {
             }
         }
         return defaultValue;    	
+    }
+    
+    private long getTime(String value, long defaultValue) {
+        if (value!=null) {
+            try {
+                float fValue = Float.valueOf(value);
+                defaultValue = (long) (fValue * Constants.SECOND);
+            } catch (Exception e) {
+                // Do nothing
+            }
+        }
+        return defaultValue;    	
+    	
     }
     
 }

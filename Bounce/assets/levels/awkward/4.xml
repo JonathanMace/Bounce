@@ -1,6 +1,0 @@
-<level name="Round the corner"  id="awkward4">
-    <ball x="200" y="320"/>
-    <bucket x="500"/>
-    <wall x1="400" y1="250" x2="400"/>
-    <wall x1="400" y1="250" x2="550" y2="250"/>
-</level>

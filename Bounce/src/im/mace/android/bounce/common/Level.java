@@ -29,8 +29,8 @@ public class Level {
     		Long currentBest = db.getScore(Constants.MODE_TIME, spec.id);
     		if (currentBest==null || newBest < currentBest) {
     			db.setScore(Constants.MODE_TIME, spec.id, newBest);
+        		updated = true;
     		}
-    		updated = true;
     	}
     	return updated;
     }
@@ -41,8 +41,8 @@ public class Level {
     		Long currentBest = db.getScore(Constants.MODE_MIN, spec.id);
     		if (currentBest==null || newMin < currentBest) {
     			db.setScore(Constants.MODE_MIN, spec.id, newMin);
+        		updated = true;
     		}
-    		updated = true;
     	}
     	return updated;
     }
@@ -53,8 +53,8 @@ public class Level {
     		Long currentBest = db.getScore(Constants.MODE_MAX, spec.id);
     		if (currentBest==null || newMax > currentBest) {
     			db.setScore(Constants.MODE_MAX, spec.id, newMax);
+        		updated = true;
     		}
-    		updated = true;
     	}
     	return updated;
     }
@@ -65,8 +65,8 @@ public class Level {
     		Long currentBest = db.getScore(Constants.MODE_MINMAX, spec.id);
     		if (currentBest==null || newMinMax > currentBest) {
     			db.setScore(Constants.MODE_MINMAX, spec.id, newMinMax);
+        		updated = true;
     		}
-    		updated = true;
     	}
     	return updated; 
     }

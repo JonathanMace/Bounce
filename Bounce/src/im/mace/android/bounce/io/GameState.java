@@ -19,16 +19,32 @@ public class GameState {
 	}
     
     private void unlockDefaults() {
-    	unlockLevelSet(Constants.LEVELSETS[0][0]);
-    	unlockMode(Constants.MODE_PRACTICE);
     	unlockMode(Constants.MODE_STANDARD);
     	unlockMode(Constants.MODE_MIN);
     	unlockMode(Constants.MODE_MAX);
     	unlockMode(Constants.MODE_TIME);
+    	for (String levelSet : Constants.LEVELSETS) {
+        	unlockLevelSet(Constants.MODE_STANDARD, levelSet); 
+        	unlockLevelSet(Constants.MODE_MIN, levelSet); 
+        	unlockLevelSet(Constants.MODE_MAX, levelSet); 
+        	unlockLevelSet(Constants.MODE_TIME, levelSet);    		
+    	}
+    	
+//    	unlockMode(Constants.MODE_STANDARD);
+//    	unlockLevelSet(Constants.MODE_STANDARD, Constants.LEVELSETS[0]);
     }
     
-    public boolean isLevelSetUnlocked(String levelSet) {
-    	return this.preferences.getBoolean(LEVELSET_UNLOCK_PREFIX+levelSet, false);
+    public boolean isLevelSetUnlocked(String mode, String levelSet) {
+    	return this.preferences.getBoolean(LEVELSET_UNLOCK_PREFIX+mode+"_"+levelSet, false);
+    }
+    
+    public boolean isNextLevelSetUnlocked(String mode, String curLevelSet) {
+    	String nextLevelSet = getNext(curLevelSet);
+    	boolean isUnlocked = false;
+    	if (nextLevelSet!=null) {
+    		isUnlocked = isLevelSetUnlocked(mode, nextLevelSet);
+    	}
+    	return isUnlocked;    	
     }
     
     public boolean isModeUnlocked(String mode) {
@@ -41,10 +57,28 @@ public class GameState {
     	editor.commit();
     }
     
-    public void unlockLevelSet(String levelSet) {
+    public void unlockLevelSet(String mode, String levelSet) {
     	Editor editor = this.preferences.edit();
-    	editor.putBoolean(LEVELSET_UNLOCK_PREFIX+levelSet, true);
+    	editor.putBoolean(LEVELSET_UNLOCK_PREFIX+mode+"_"+levelSet, true);
     	editor.commit();
+    }
+    
+    public void unlockNextLevelSet(String mode, String curLevelSet) {
+    	String nextLevelSet = getNext(curLevelSet);
+    	if (nextLevelSet!=null) {
+    		unlockLevelSet(mode, nextLevelSet);
+    		unlockLevelSet(Constants.MODE_PRACTICE, curLevelSet);
+    	}
+    }
+    
+    private String getNext(String current) {
+    	String nextLevelSet = null;
+    	for (int i = 0; i < Constants.LEVELSETS.length-1; i++) {
+    		if (Constants.LEVELSETS[i].equals(current)) {
+    			nextLevelSet = Constants.LEVELSETS[i+1];
+    		}
+    	}
+    	return nextLevelSet;
     }
 
 }

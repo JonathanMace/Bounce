@@ -1,0 +1,4 @@
+<level name="Simple But Deadly" id="level">
+	<ball x="32" y="197"/>
+	<bucket x="43" y="121"/>
+</level>

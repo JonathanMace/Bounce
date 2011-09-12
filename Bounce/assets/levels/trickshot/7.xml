@@ -1,0 +1,7 @@
+<level name="Straight On In" id="1c7">
+	<ball x="184" y="307"/>
+	<bucket x="454" y="270"/>
+	<wall x1="496" y1="235" x2="496" y2="159"/>
+	<wall x1="496" y1="159" x2="351" y2="159"/>
+	<wall x1="412" y1="234" x2="351" y2="234"/>
+</level>

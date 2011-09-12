@@ -1,0 +1,8 @@
+<level name="Easy does it" id="1b1" time="3">
+    <ball x="200" y="350"/>
+    <bucket x="720"/>
+    <wall x1="300" x2="300" y1="0" y2="380"/>
+    <wall x1="500" x2="500" y1="380"/>
+    <wall x1="500" y1="280" y2="280"/>
+    <wall x1="300" x2="500" y1="280" y2="180"/>
+</level>

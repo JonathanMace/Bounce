@@ -14,7 +14,7 @@ public class LevelSpec {
     public long min = 99;
     public long max = 1;
     public long minmax = 0;
-    public long time = 10000000000000L; /* 10 seconds in nanotime */
+    public long time = Constants.SECOND*60; /* 60 seconds in nanotime */
     
     public Collection<Wall> walls = new ArrayList<Wall>();
     public float bucketX = Constants.CAMERA_WIDTH - Constants.WALL_WIDTH_DEFAULT - Constants.BUCKET_WIDTH_DEFAULT/2;

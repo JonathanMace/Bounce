@@ -1,0 +1,7 @@
+<level name="The Naughty Corner" id="3c5">
+	<ball x="603" y="229"/>
+	<bucket x="43" y="122"/>
+	<wall x1="307" y1="353" x2="307" y2="0"/>
+	<wall x1="307" y1="245" x2="236" y2="303"/>
+	<wall x1="236" y1="303" x2="307" y2="353"/>
+</level>

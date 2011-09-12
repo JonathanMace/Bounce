@@ -1,7 +1,0 @@
-<level name="You're too slow!" id="awkward6">
-    <ball x="400" y="207"/>
-    <bucket x="400"/>
-    <wall x1="250" y1="240" x2="550" y2="240"/>
-    <wall x1="250" y1="120" x2="250" y2="240"/>
-    <wall x1="550" y1="120" x2="550" y2="240"/>
-</level>

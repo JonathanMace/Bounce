@@ -1,5 +1,0 @@
-<level name="Over the wall" id="awkward1">
-    <ball x="200" y="280"/>
-    <bucket x="600"/>
-    <wall x1="400" y1="150" x2="400"/>
-</level>

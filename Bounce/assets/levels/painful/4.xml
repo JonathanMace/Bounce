@@ -1,0 +1,7 @@
+<level name="Triple Thread" id="3b4">
+	<ball x="100" y="250"/>
+	<bucket x="700" y="443"/>
+	<wall x1="400" y1="325" x2="400" y2="0"/>
+	<wall x1="200" y1="131" x2="200"/>
+	<wall x1="600" y1="131" x2="600"/>
+</level>

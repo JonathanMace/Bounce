@@ -1,0 +1,6 @@
+<level name="Up and Down and Up and wait wut??" id="tricky2">
+    <ball x="125" y="360"/>
+    <bucket x="685"/>
+    <wall x1="220" y1="200" x2="220"/>
+    <wall x1="570" y1="200" x2="570"/>
+</level>

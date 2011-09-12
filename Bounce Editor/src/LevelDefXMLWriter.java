@@ -9,7 +9,7 @@ public class LevelDefXMLWriter {
         
         xml.append("<level name=\"");
         xml.append(def.name);
-        xml.append("\">\n");
+        xml.append("\" id=\""+def.id+"\">\n");
         
         xml.append("\t<ball x=\"");
         xml.append((int) def.ballX);

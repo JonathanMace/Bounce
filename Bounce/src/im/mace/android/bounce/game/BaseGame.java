@@ -24,6 +24,8 @@ public abstract class BaseGame extends BaseGameActivity {
     protected GameScene scene;
     
     protected Level level;
+    protected String levelSet;
+    protected int levelNumber;
     
     protected TextureBucket textures;
     protected Font font;
@@ -32,8 +34,8 @@ public abstract class BaseGame extends BaseGameActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        int levelNumber = this.getIntent().getIntExtra(Constants.LEVEL_KEY, -1);
-        String levelSet = this.getIntent().getStringExtra(Constants.LEVEL_SET_KEY);
+        this.levelNumber = this.getIntent().getIntExtra(Constants.LEVEL_KEY, -1);
+        this.levelSet = this.getIntent().getStringExtra(Constants.LEVEL_SET_KEY);
         
         this.level = LevelManager.getLevel(this, levelSet, levelNumber);
         if (this.level==null) {

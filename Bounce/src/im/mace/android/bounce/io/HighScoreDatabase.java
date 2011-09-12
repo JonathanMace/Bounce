@@ -14,8 +14,8 @@ public class HighScoreDatabase extends SQLiteOpenHelper {
 	private static final String dbName="highscoresDB";
 	
 	private static final String scoresTable="Scores";
-	private static final String colLevel="Level";
-	private static final String colType="Type";
+	private static final String colLevelID="LevelID";
+	private static final String colMode="Mode";
 	private static final String colScore="Score";
 
 
@@ -27,10 +27,10 @@ public class HighScoreDatabase extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		String createTimes = "CREATE TABLE "+scoresTable+
 								"("+
-									colLevel+" TEXT NOT NULL, "+
-									colType+" TEXT NOT NULL, "+
+									colLevelID+" TEXT NOT NULL, "+
+									colMode+" TEXT NOT NULL, "+
 									colScore+" LONG NOT NULL, "+
-									"CONSTRAINT pk_levelID PRIMARY KEY ("+colLevel+","+colType+")"+
+									"CONSTRAINT pk_levelID PRIMARY KEY ("+colLevelID+","+colMode+")"+
 								")";
 		Log.i("sql", "Executing SQL " + createTimes);
 		
@@ -43,11 +43,11 @@ public class HighScoreDatabase extends SQLiteOpenHelper {
 	}
 	
 	public void setScore(String mode, String levelID, Long newScore) {
-		Long currentScore = this.getScore(levelID, mode);
+		Long currentScore = this.getScore(mode, levelID);
 		if (currentScore==null) {
-			this.saveNewScore(levelID, mode, newScore);
+			this.saveNewScore(mode, levelID, newScore);
 		} else {
-			this.updateScore(levelID, mode, newScore);
+			this.updateScore(mode, levelID, newScore);
 		}
 	}
 	
@@ -57,8 +57,8 @@ public class HighScoreDatabase extends SQLiteOpenHelper {
 		SQLiteDatabase db=this.getReadableDatabase();
 		String rawQuery = 	"SELECT "+colScore+
 							" FROM "+scoresTable+
-							" WHERE "+colLevel+"='"+levelID+"'"+
-							" AND "+colType+"='"+mode+"'";
+							" WHERE "+colLevelID+"='"+levelID+"'"+
+							" AND "+colMode+"='"+mode+"'";
 		Log.i("sql", "Executing SQL " + rawQuery);
 		Cursor c = db.rawQuery(rawQuery, new String[] {});
 		if (c.moveToFirst()) {
@@ -68,20 +68,20 @@ public class HighScoreDatabase extends SQLiteOpenHelper {
 		return result;
 	}
 	
-	private void saveNewScore(String level, String type, Long score) {
+	private void saveNewScore(String mode, String levelID, Long score) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues cv = new ContentValues();
-		cv.put(colLevel, level);
-		cv.put(colType, type);
+		cv.put(colMode, mode);
+		cv.put(colLevelID, levelID);
 		cv.put(colScore, score);
 		db.insert(scoresTable, null, cv);
 	}
 	
-	private void updateScore(String level, String type, Long score) {
+	private void updateScore(String mode, String levelID, Long score) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues cv = new ContentValues();
 		cv.put(colScore, score);
-		String whereClause = colLevel+"='"+level+"' AND "+colType+"='"+type+"'";
+		String whereClause = colMode+"='"+mode+"' AND "+colLevelID+"='"+levelID+"'";
 		int i = db.update(scoresTable, cv, whereClause, new String []{});   
 		Log.i("jon", "Updated "+i);
 	}

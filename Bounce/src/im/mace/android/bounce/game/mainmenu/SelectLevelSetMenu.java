@@ -11,23 +11,27 @@ import org.anddev.andengine.entity.shape.Shape;
 import org.anddev.andengine.opengl.texture.region.TiledTextureRegion;
 
 public abstract class SelectLevelSetMenu extends MenuPage {
+	
+	protected String mode;
 
+	private static final int COL_COUNT = 3;
     private static final float[] COLS = new float[] { 13, 275, 537 };
     private static final float[] ROWS = new float[] { 150, 260, 370 };
     
     private static final float BUTTON_WIDTH = 250;
     private static final float BUTTON_HEIGHT = 100;
+    
+    public SelectLevelSetMenu(String mode) {
+    	this.mode = mode;
+    }
 
 	@Override
 	public Collection<Shape> constructMenuObjects(MainMenu menu) {
 		Collection<Shape> buttons = new ArrayList<Shape>();
 
         for (int i = 0; i < Constants.LEVELSETS.length; i++) {
-            String[] row = Constants.LEVELSETS[i];
-            for (int j = 0; j < row.length; j++) {
-                String levelSetName = row[j];
-                buttons.add(this.constructButton(COLS[j], ROWS[i], BUTTON_WIDTH, BUTTON_HEIGHT, levelSetName, menu));
-            }
+            String levelSetName = Constants.LEVELSETS[i];
+            buttons.add(this.constructButton(COLS[i%COL_COUNT], ROWS[i/COL_COUNT], BUTTON_WIDTH, BUTTON_HEIGHT, levelSetName, menu));
         }
 		
 		return buttons;
@@ -37,7 +41,7 @@ public abstract class SelectLevelSetMenu extends MenuPage {
         DisableButton button = null;
         TiledTextureRegion buttonTexture = menu.getTextures().getTiledTexture("button_levels_"+setName);
         if (buttonTexture != null) {
-            button = new DisableButton(x, y, w, h, menu.getGameState().isLevelSetUnlocked(setName), buttonTexture){
+            button = new DisableButton(x, y, w, h, menu.getGameState().isLevelSetUnlocked(mode, setName), buttonTexture){
                 public void onClick() {
                 	onLevelSetSelected(menu, setName);
                 }

@@ -1,0 +1,5 @@
+<level name="Over the wall" id="1a4" time="2.5">
+    <ball x="200" y="280"/>
+    <bucket x="600"/>
+    <wall x1="400" y1="150" x2="400"/>
+</level>

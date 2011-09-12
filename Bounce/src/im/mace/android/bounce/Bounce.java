@@ -16,11 +16,15 @@ public class Bounce extends Activity {
         super.onCreate(savedInstanceState);
         
         assetManager = this.getAssets();
-        
-//        testDB();
 
         Intent intent = new Intent(getBaseContext(), MainMenuActivity.class);
         startActivityForResult(intent, 0);
+        
+
+//        Intent intent = new Intent(getBaseContext(), PracticeMode.class);
+//        intent.putExtra(Constants.LEVEL_SET_KEY, "simple");
+//        intent.putExtra(Constants.LEVEL_KEY, 0);
+//        startActivityForResult(intent, 0);    
     }
 
     @Override

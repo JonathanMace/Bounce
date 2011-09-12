@@ -1,0 +1,5 @@
+<level name="Nip Downstairs" id="2b7">
+	<ball x="488" y="153"/>
+	<bucket x="371" y="443"/>
+	<wall x1="96" y1="264" x2="800" y2="264"/>
+</level>

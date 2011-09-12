@@ -1,0 +1,8 @@
+<level name="Either way, you're OK" id="elegant7">
+    <ball x="400" y="360"/>
+    <bucket x="400" y="120"/>
+    <wall x1="200" x2="600" y1="240" y2="240"/>
+    <wall x1="200" x2="600" y1="420" y2="420"/>
+    <wall x1="0" x2="80" y1="270" y2="390"/>
+    <wall x1="800" x2="720" y1="270" y2="390"/>
+</level>

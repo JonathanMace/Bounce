@@ -1,11 +1,16 @@
 package im.mace.android.bounce.game.minbounce;
 
+import im.mace.android.bounce.common.Constants;
 import im.mace.android.bounce.common.Level;
 import im.mace.android.bounce.game.mainmenu.MainMenu;
 import im.mace.android.bounce.game.mainmenu.SelectLevelMenu;
 import im.mace.android.bounce.game.mainmenu.SelectLevelSetMenu;
 
 public class MinModeMenu extends SelectLevelSetMenu {
+	
+	public MinModeMenu() {
+		super(Constants.MODE_MIN);
+	}
 
 	@Override
 	protected void onLevelSetSelected(MainMenu menu, String levelSet) {

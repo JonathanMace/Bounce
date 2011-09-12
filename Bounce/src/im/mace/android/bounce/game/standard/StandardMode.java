@@ -1,8 +1,8 @@
 package im.mace.android.bounce.game.standard;
 
 import im.mace.android.bounce.common.Constants;
+import im.mace.android.bounce.io.GameState;
 import im.mace.android.bounce.io.LevelManager;
-import im.mace.android.bounce.io.Unlocks;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,7 +48,16 @@ public class StandardMode extends Activity {
     }
     
     private void success() {
-    	Unlocks.evaluateUnlocks(this, levelSet);
+    	GameState state = new GameState(this);
+    	state.unlockMode(Constants.MODE_PRACTICE);
+    	state.unlockNextLevelSet(Constants.MODE_STANDARD, levelSet);
+    	if (levelSet.equals(Constants.LEVELSETS[5])) {
+    		state.unlockMode(Constants.MODE_MIN);
+    		state.unlockLevelSet(Constants.MODE_MIN, Constants.LEVELSETS[0]);
+    	} else if (levelSet.equals(Constants.LEVELSETS[8])) {
+    		state.unlockMode(Constants.MODE_MAX);
+    		state.unlockLevelSet(Constants.MODE_MAX, Constants.LEVELSETS[0]);
+    	}
     	finish();
     }
     

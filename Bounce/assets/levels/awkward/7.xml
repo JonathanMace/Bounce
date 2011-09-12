@@ -1,6 +1,0 @@
-<level name="Up and at them" id="awkward7">
-    <ball x="200" y="320"/>
-    <bucket x="600"/>
-    <wall x1="400" y1="250" x2="400"/>
-    <wall x1="250" y1="250" x2="550" y2="250"/>
-</level>

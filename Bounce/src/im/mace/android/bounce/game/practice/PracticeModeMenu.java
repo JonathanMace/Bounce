@@ -1,11 +1,16 @@
 package im.mace.android.bounce.game.practice;
 
+import im.mace.android.bounce.common.Constants;
 import im.mace.android.bounce.common.Level;
 import im.mace.android.bounce.game.mainmenu.MainMenu;
 import im.mace.android.bounce.game.mainmenu.SelectLevelMenu;
 import im.mace.android.bounce.game.mainmenu.SelectLevelSetMenu;
 
 public class PracticeModeMenu extends SelectLevelSetMenu {
+
+	public PracticeModeMenu() {
+		super(Constants.MODE_PRACTICE);
+	}
 
 	@Override
 	protected void onLevelSetSelected(MainMenu menu, String levelSet) {

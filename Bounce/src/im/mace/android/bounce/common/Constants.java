@@ -34,10 +34,10 @@ public class Constants {
     public static final Long MIN_BOUNCES_FLOOR = 100L;
     public static final Long TIME_ATTACK_CAP = 60000000000L;
 
-    public static final String[][] LEVELSETS = new String[][] {
-            { "simple", "elegant", "tricky" },
-            { "awkward", "frustrating", "phonesmashing" },
-            { "confusing", "annoying", "impossible" } 
+    public static final String[] LEVELSETS = new String[] {
+             "starter", "bouncy", "trickshot",
+             "intermediate", "delicate", "fluke",
+             "advanced", "painful", "impossible" 
     };
     
 
@@ -49,5 +49,7 @@ public class Constants {
     public static final String MODE_STANDARD = "standard";
     
     public static final String PREFERENCES_NAME = "im.mace.android.bounce";
+    
+    public static final long SECOND = 1000000000L;
 
 }

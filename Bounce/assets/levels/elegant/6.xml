@@ -1,8 +1,0 @@
-<level name="Up, Down, Round and Round" id="elegant6">
-    <ball x="125" y="200"/>
-    <bucket x="755" y="400"/>
-    <wall x1="0" x2="250" y1="240" y2="240"/>
-    <wall x1="250" x2="250" y1="120" y2="240"/>
-    <wall x1="400" x2="400" y1="0" y2="240"/>
-    <wall x1="590" x2="510" y1="360" y2="325"/>
-</level>

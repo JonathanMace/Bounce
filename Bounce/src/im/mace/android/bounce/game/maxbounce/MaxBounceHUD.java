@@ -12,11 +12,11 @@ public abstract class MaxBounceHUD extends BaseHUD {
 	protected final String TARGET_TEXT = "To beat: ";	
 	protected final String BEST_TEXT = "Your Best: ";
 	protected final float BEST_TEXT_X = 425;
-	protected final float BEST_TEXT_Y = 5;
+	protected final float BEST_TEXT_Y = 10;
 
 	protected final String CURRENT_TEXT = "Bounces: ";
 	protected final float CURRENT_TEXT_X = 175;
-	protected final float CURRENT_TEXT_Y = 5;
+	protected final float CURRENT_TEXT_Y = 10;
     
     protected ChangeableText bestScore;
     protected ChangeableText currentBounces;

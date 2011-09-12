@@ -1,0 +1,5 @@
+<level name="So Close, But So Far Away" id="3c7">
+	<ball x="400" y="34"/>
+	<bucket x="400" y="184"/>
+	<wall x1="450" y1="68" x2="350" y2="68"/>
+</level>

@@ -69,15 +69,15 @@ public class TextureUtils {
         bucket.addTiledTexture("button_timeattack", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_timeattack.png", 0, 640, 3, 1));
 
         // Select level set buttons
-        bucket.addTiledTexture("button_levels_annoying", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_annoying.png", 0, 768, 3, 1));
-        bucket.addTiledTexture("button_levels_awkward", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_awkward.png", 0, 896, 3, 1));
-        bucket.addTiledTexture("button_levels_confusing", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_confusing.png", 0, 1024, 3, 1));
-        bucket.addTiledTexture("button_levels_elegant", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_elegant.png", 0, 1152, 3, 1));
-        bucket.addTiledTexture("button_levels_frustrating", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_frustrating.png", 0, 1280, 3, 1));
-        bucket.addTiledTexture("button_levels_impossible", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_impossible.png", 0, 1408, 3, 1));
-        bucket.addTiledTexture("button_levels_phonesmashing", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_phonesmashing.png", 0, 1536, 3, 1));
-        bucket.addTiledTexture("button_levels_simple", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_simple.png", 0, 1664, 3, 1));
-        bucket.addTiledTexture("button_levels_tricky", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_tricky.png", 0, 1792, 3, 1));
+        bucket.addTiledTexture("button_levels_starter", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_starter.png", 0, 768, 3, 1));
+        bucket.addTiledTexture("button_levels_bouncy", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_bouncy.png", 0, 896, 3, 1));
+        bucket.addTiledTexture("button_levels_trickshot", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_trickshot.png", 0, 1024, 3, 1));
+        bucket.addTiledTexture("button_levels_intermediate", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_intermediate.png", 0, 1152, 3, 1));
+        bucket.addTiledTexture("button_levels_delicate", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_delicate.png", 0, 1280, 3, 1));
+        bucket.addTiledTexture("button_levels_fluke", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_fluke.png", 0, 1408, 3, 1));
+        bucket.addTiledTexture("button_levels_advanced", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_advanced.png", 0, 1536, 3, 1));
+        bucket.addTiledTexture("button_levels_painful", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_painful.png", 0, 1664, 3, 1));
+        bucket.addTiledTexture("button_levels_impossible", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m1024BitmapTextureAtlas, context, "button_levels_impossible.png", 0, 1792, 3, 1));
 
         bucket.addTiledTexture("button_level", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(m2048BitmapTextureAtlas, context, "button_level.png", 0, 0, 3, 1));
         
@@ -91,7 +91,8 @@ public class TextureUtils {
     }
     
     public static Font loadGameFont(Engine engine) {
-        return loadFont(engine, 32, Color.rgb(181, 196, 0));
+//        return loadFont(engine, 50, Color.rgb(181, 196, 0));
+        return loadFont(engine, 32, Color.rgb(230, 130, 130));
     }
     
     public static Font loadMenuFont(Engine engine) {

@@ -7,9 +7,10 @@ import im.mace.android.bounce.common.LevelSpec;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -62,6 +63,18 @@ public class LevelManager {
     
     public static boolean exists(String levelSet, int levelNumber) {
     	return fileExists(getFileName(levelSet, levelNumber));
+    }
+    
+    public static List<Level> getLevels(Context context, String levelSet) {
+    	List<Level> levels = new ArrayList<Level>();
+    	int levelNumber = 0;
+    	Level next = getLevel(context, levelSet, levelNumber);
+    	while (next!=null) {
+    		levels.add(next);
+    		levelNumber++;
+    		next = getLevel(context, levelSet, levelNumber);
+    	}
+    	return levels;
     }
     
     private static Level loadLevel(Context context, String levelSet, int levelNumber) {

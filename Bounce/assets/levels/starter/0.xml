@@ -1,0 +1,5 @@
+<level name="An Easy Start" id="1a0" min="2" max="6" time="2">
+	<ball x="434" y="282"/>
+	<bucket x="254" y="279"/>
+	<wall x1="0" y1="315" x2="800" y2="315"/>
+</level>

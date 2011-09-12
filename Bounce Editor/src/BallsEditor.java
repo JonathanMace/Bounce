@@ -120,7 +120,7 @@ public class BallsEditor implements WindowListener {
         LevelSpec def = new LevelSpec();
         try {
             SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
-            File file = new File("E:\\Java Workspaces\\Android\\Bounce\\assets\\levels\\impossible\\0.xml");
+            File file = new File("E:\\Git Repositories\\Bounce\\Bounce\\assets\\levels\\simple\\0.xml");
             LevelSpecHandler handler = new LevelSpecHandler();
             parser.parse(file, handler);
             return handler.getLevelDef();      
@@ -140,7 +140,7 @@ public class BallsEditor implements WindowListener {
     private void saveCurrent(String xml) {
         try{
             // Create file 
-            FileWriter fstream = new FileWriter("E:\\Java Workspaces\\Android\\Bounce\\assets\\levels\\impossible\\0.xml");
+            FileWriter fstream = new FileWriter("E:\\Git Repositories\\Bounce\\Bounce\\assets\\levels\\simple\\0.xml");
             BufferedWriter out = new BufferedWriter(fstream);
             out.write(xml);
             //Close the output stream

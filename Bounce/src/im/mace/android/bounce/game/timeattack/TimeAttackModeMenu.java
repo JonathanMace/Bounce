@@ -1,11 +1,16 @@
 package im.mace.android.bounce.game.timeattack;
 
+import im.mace.android.bounce.common.Constants;
 import im.mace.android.bounce.common.Level;
 import im.mace.android.bounce.game.mainmenu.MainMenu;
 import im.mace.android.bounce.game.mainmenu.SelectLevelMenu;
 import im.mace.android.bounce.game.mainmenu.SelectLevelSetMenu;
 
 public class TimeAttackModeMenu extends SelectLevelSetMenu {
+	
+	public TimeAttackModeMenu() {
+		super(Constants.MODE_TIME);
+	}
 
 	@Override
 	protected void onLevelSetSelected(MainMenu menu, String levelSet) {
